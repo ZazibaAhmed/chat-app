@@ -8,6 +8,11 @@
 </head>
 <body>
   <h1>Chat App</h1>
+  <form id="message-form">
+    <input name="message" placeholder="message">
+    <button>Send</button>
+  </form> 
+  
   <!-- Not a script that we created. It's served up because we have configred our sever to work with socket.io -->
   <script src="/socket.io/socket.io.js"></script>
   <script src="/js/chat.js"></script>
