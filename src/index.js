@@ -20,10 +20,15 @@ io.on('connection', (socket) => { // runs for each different connection
   console.log(`New WebSocket connection`);
 
   socket.emit('message', 'Welcome!');
+  socket.broadcast.emit('message', "A new user has joined!");
 
   socket.on('sendMessage', (message) => {
     io.emit('message', message) 
   });
+
+  socket.on('disconnect', () => {
+    io.emit('message', "A user has left");
+  })
 
 })
 
